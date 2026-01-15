@@ -1,0 +1,111 @@
+/* MAIN LAYOUT */
+#main-content{
+    height: calc(100vh - 90px);
+    width:100%;
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 40px;
+    background-color: #33333348;
+}
+
+/* CARD BASE */
+.card{
+    height:220px;
+    width:220px;
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    font-size:30px;
+    font-weight:800;
+    cursor:pointer;
+    position:relative;
+    overflow:hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* DEFAULT LABEL */
+.card p{
+    color:white;
+    z-index:3;
+    transition: opacity 0.3s ease;
+}
+
+/* COLOR FILL (PERMANENT) */
+.card::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:100%;
+    height:100%;                 /* always filled */
+    z-index:1;
+}
+
+/* COUNT + NAME (HIDDEN INITIALLY) */
+.card::before{
+    content: attr(data-count) " " attr(id);
+    position:absolute;
+    font-size:36px;
+    font-weight:700;
+    color:white;
+    opacity:0;
+    transform: scale(0.7);
+    transition: all 0.4s ease 0.2s;
+    z-index:2;
+    text-transform: capitalize;
+}
+
+/* HOVER EFFECT */
+.card:hover{
+    transform: translateY(-12px) scale(1.05);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
+
+/* SHOW COUNT + NAME */
+.card:hover::before{
+    opacity:1;
+    transform: scale(1);
+}
+
+/* HIDE DEFAULT LABEL */
+.card:hover p{
+    opacity:0;
+}
+
+/* STUDENTS */
+#students{
+    border-bottom:5px solid #00e5ff;
+}
+#students::after{
+    background: linear-gradient(135deg,#00e5ff,#0097a7);
+}
+
+/* COLLEGES */
+#colleges{
+    border-bottom:5px solid #76ff03;
+}
+#colleges::after{
+    background: linear-gradient(135deg,#76ff03,#43a047);
+}
+
+/* COMPANIES */
+#companies{
+    border-bottom:5px solid #ff9100;
+}
+#companies::after{
+    background: linear-gradient(135deg,#ff9100,#ef6c00);
+}
+
+/* JOB ROLES */
+#job\ roles{
+    border-bottom:5px solid #ff1744;
+}
+#job\ roles::after{
+    background: linear-gradient(135deg,#ff1744,#d50000);
+}

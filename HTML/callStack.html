@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id = "count">0</h1>
+    <button id = "start">Start</button>
+    <br><br>
+    <button id = "stop">Stop</button>
+    <script>
+        //callStack is used for synchronous tasks
+        //promises , setTimout , setInterval belong to browser api , and they are also asynchronous operations 
+        //settimeout is browser api not from javascript
+        //it goes from browser api to task queue , and when callStack is empty it will go to callStack from task queue
+        //event loop is a mechanism that is responsible checks thetask if to send to callStack or not 
+        //async, await , fetch , promises,  all these go to micro queue
+        // setTimout , setInterval ,  all others go in macro 
+        //when micro is empty then only it will go to the macro 
+        //first we will give preference to micro and then macro will be next prefence 
+        //setInterval is used to put timer for every seconds for the event to happen 
+
+        //===========================================================================//
+
+        // console.log("First");
+        // setTimeout(()=> {
+        //     console.log("Time Out 1");
+        // },0)
+        // setTimeout(()=> {
+        //     console.log("Time Out 2"); 
+        // },2000)
+        // setTimeout(()=> {
+        //     console.log("Time Out 3");
+        // },1000)
+        // let x = new Promise((res,rej)=>{
+        //     res("Promise Resolved 1")
+        // })
+        // let y = new Promise((res,rej)=>{
+        //     res("Promise Resolved 2")
+        // })
+        // x.then((res)=>{
+        //     console.log(res);
+        // })
+        // y.then((res)=>{
+        //     console.log(res);      
+        // })
+        // console.log("End");
+
+        //===============================================================================//
+
+        // let a = 10;
+        // let x = setInterval(()=>{
+        //     // console.log("Hello");
+        //     // console.log("Hi");
+        //     console.log(a--);
+        // },1000);
+
+        // setTimeout(()=>{
+        //     clearInterval(x);
+        // },10000);
+
+        //===============================================================================//
+
+        let start = document.getElementById("start");
+        let stop = document.getElementById("stop");
+        let count = document.getElementById("count");
+        
+        let b = 0;
+        let interval;
+        start.addEventListener("click",()=>{
+            interval = setInterval(() => {
+                count.innerText = b++;
+                console.log(b,"b");
+            }, 1000);
+        });
+        stop.addEventListener("click",()=>{
+            clearInterval(interval);
+        });
+
+    </script>
+</body>
+</html>

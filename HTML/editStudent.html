@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Student</title>
+
+    <link rel="stylesheet" href="../CSS/header.css">
+    <link rel="stylesheet" href="../CSS/index.css">
+
+    <style>
+        body {
+            background-color: #f4f6fb;
+        }
+
+        #studentForm {
+            max-width: 720px;
+            margin: 40px auto;
+            padding: 32px;
+            background: white;
+            border-radius: 16px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px 24px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        #studentForm input,
+        #studentForm select {
+            height: 42px;
+            width: 100%;
+            padding: 0 14px;
+            border-radius: 10px;
+            border: 1px solid #d1d5db;
+            font-size: 15px;
+            outline: none;
+            background-color: #fafafa;
+        }
+
+        #studentForm input:focus,
+        #studentForm select:focus {
+            border-color: #6366f1;
+            background-color: white;
+        }
+
+        .upload-box {
+            height: 42px;
+            width: 100%;
+            border-radius: 10px;
+            border: 1px dashed #6366f1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: 500;
+            color: #4338ca;
+            background-color: #f5f7ff;
+            transition: 0.3s;
+        }
+
+
+        #studentForm button {
+            grid-column: 1 / -1;
+            height: 46px;
+            border-radius: 12px;
+            border: none;
+            font-size: 17px;
+            font-weight: 600;
+            cursor: pointer;
+            color: white;
+            background: linear-gradient(135deg, #6366f1, #4338ca);
+        }
+
+        #studentForm button:hover {
+            filter: brightness(1.1);
+        }
+
+        @media (max-width: 768px) {
+            #studentForm {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <h1>Placement Tracker</h1>
+        <input type="search" id="search" placeholder="Search students, colleges, companies...">
+        <nav id="navlinks">
+            <a href="./index.html">Home</a>
+            <a href="./students.html">Students</a>
+            <a href="./colleges.html">Colleges</a>
+            <a href="./companies.html">Companies</a>
+            <a href="./roles.html">Job Roles</a>
+        </nav>
+    </header>
+
+    <form id="studentForm">
+        <input type="text" placeholder="Enter Student Name" id="studentName">
+        <select id="studentGender">
+            <option>Male</option>
+            <option>Female</option>
+        </select>
+
+        <input type="date" id="dob">
+        <label class="upload-box">
+            <input type="file" id="profileimg" hidden>
+            <span>Upload Profile Image</span>
+        </label>
+
+
+        <input type="text" placeholder="Enter CollegeId" id="collegeId">
+        <input type="text" placeholder="Enter Department" id="department">
+
+        <input type="text" placeholder="Enter Degree" id="degree">
+        <input type="number" placeholder="Enter Graduation Year" id="graduation">
+
+        <input type="" placeholder="Enter CGPA" id="cgpa">
+        <input type="number" placeholder="Enter Backlogs" id="backlogs">
+
+        <input type="text" placeholder="Enter Programming Languages" id="programming">
+        <input type="text" placeholder="Enter Databases" id="database">
+
+        <input type="text" placeholder="Enter Tools" id="tools">
+        <select id="placementStatus">
+            <option>Placed</option>
+            <option>Not Placed</option>
+        </select>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script src="../JS/editStudent.js"></script>
+</body>
+
+</html>
