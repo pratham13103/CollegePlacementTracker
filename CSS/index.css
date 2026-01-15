@@ -103,9 +103,10 @@
 }
 
 /* JOB ROLES */
-#job\ roles{
+#job-roles {
     border-bottom:5px solid #ff1744;
 }
-#job\ roles::after{
+#job-roles::after {
     background: linear-gradient(135deg,#ff1744,#d50000);
 }
+

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,11 +15,7 @@
     <header id="header">
         <h1>Placement Tracker</h1>
 
-        <input 
-          type="search" 
-          id="search" 
-          placeholder="Search students, colleges, companies..."
-        >
+        <input type="search" id="search" placeholder="Search students, colleges, companies...">
 
         <nav id="navlinks">
             <a href="./index.html">Home</a>
@@ -30,10 +27,18 @@
     </header>
 
     <main id="main-content">
-        <div class="card" id="students">Students</div>
-        <div class="card" id="colleges">Colleges</div>
-        <div class="card" id="companies">Companies</div>
-        <div class="card" id="job-roles">Job Roles</div>
+        <div class="card" id="students" data-count="120">
+            <p>Students</p>
+        </div>
+        <div class="card" id="colleges" data-count="15">
+            <p>Colleges</p>
+        </div>
+        <div class="card" id="companies" data-count="42">
+            <p>Companies</p>
+        </div>
+        <div class="card" id="job-roles" data-count="18">
+            <p>Job Roles</p>
+        </div>
     </main>
 
     <!-- JS -->
@@ -44,4 +49,5 @@
     <script src="./JS/api.js"></script>
     <script src="./JS/index.js"></script>
 </body>
+
 </html>
